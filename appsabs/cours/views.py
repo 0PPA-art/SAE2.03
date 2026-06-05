@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def liste_cours(request):
+    return render(request, 'cours/liste.html')
+
+
+def ajout_cours(request):
+    return render(request, 'cours/ajout.html')

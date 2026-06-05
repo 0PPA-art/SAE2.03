@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def liste_enseignants(request):
+    return render(request, 'enseignants/liste.html')
+
+
+def ajout_enseignant(request):
+    return render(request, 'enseignants/ajout.html')
