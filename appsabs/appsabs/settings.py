@@ -37,7 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'absences.apps.AbsencesConfig',
+
+    # Tes applications
+    'groupes',  # ← Ajoute cette ligne
+    # 'cours',           # tu ajouteras plus tard
+    # 'etudiants',
+    # 'enseignants',
+    # 'absences',
+    # 'core',
 ]
 
 MIDDLEWARE = [

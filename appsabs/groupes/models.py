@@ -9,6 +9,7 @@ class Groupe(models.Model):
         verbose_name = "Groupe"
         verbose_name_plural = "Groupes"
         ordering = ['nom']
+        app_label = 'groupes'  # ← Ajoute cette ligne si besoin
 
     def __str__(self):
         return self.nom
