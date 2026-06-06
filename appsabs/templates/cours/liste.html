@@ -16,13 +16,15 @@
     </tr>
     <tr>
         <td colspan="3">
-            <a href="#" class="btn btn-warning btn-sm">
-                Modifier
-            </a>
+          <td>
+    <a href="/cours/modifier/{{ c.id }}/" class="btn btn-warning btn-sm">
+        Modifier
+    </a>
 
-            <a href="#" class="btn btn-danger btn-sm">
-                Supprimer
-            </a>
+    <a href="/cours/supprimer/{{ c.id }}/" class="btn btn-danger btn-sm">
+        Supprimer
+    </a>
+</td>
         </td>
     </tr>
     {% for c in cours %}

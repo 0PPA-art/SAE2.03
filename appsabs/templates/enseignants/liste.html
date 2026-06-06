@@ -4,35 +4,38 @@
 
 <h1>Liste des enseignants</h1>
 
-<a href="#" class="btn btn-success">
+<a href="/enseignants/ajout/" class="btn btn-success mb-3">
     Ajouter un enseignant
 </a>
 
 <table class="table table-striped mt-3">
-    <tr>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Email</th>
-        <th>Actions</th>
-    </tr>
-    <tr>
-        <td colspan="4">
-            <a href="#" class="btn btn-warning btn-sm">
-                Modifier
-            </a>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
 
-            <a href="#" class="btn btn-danger btn-sm">
-                Supprimer
-            </a>
-        </td>
-    </tr>
-    {% for enseignant in enseignants %}
-<tr>
-    <td>{{ enseignant.nom }}</td>
-    <td>{{ enseignant.prenom }}</td>
-    <td>{{ enseignant.email }}</td>
-</tr>
-{% endfor %}
+    <tbody>
+        {% for enseignant in enseignants %}
+        <tr>
+            <td>{{ enseignant.nom }}</td>
+            <td>{{ enseignant.prenom }}</td>
+            <td>{{ enseignant.email }}</td>
+            <td>
+               <a href="/enseignants/modifier/{{ enseignant.id }}/" class="btn btn-warning btn-sm">
+    Modifier
+</a>
+
+<a href="/enseignants/supprimer/{{ enseignant.id }}/" class="btn btn-danger btn-sm">
+    Supprimer
+</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
 
 {% endblock %}

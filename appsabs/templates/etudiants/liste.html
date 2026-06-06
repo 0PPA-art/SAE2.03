@@ -29,13 +29,13 @@
             <td>{{ etudiant.email }}</td>
 
             <td>
-                <button class="btn btn-warning btn-sm">
-                    Modifier
-                </button>
+              <a href="/etudiants/modifier/{{ etudiant.id }}/" class="btn btn-warning btn-sm">
+    Modifier
+</a>
 
-                <button class="btn btn-danger btn-sm">
-                    Supprimer
-                </button>
+<a href="/etudiants/supprimer/{{ etudiant.id }}/" class="btn btn-danger btn-sm">
+    Supprimer
+</a>
             </td>
         </tr>
 
