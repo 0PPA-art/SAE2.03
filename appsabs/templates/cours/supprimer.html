@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Supprimer un cours</h1>
+
+<p>Voulez-vous vraiment supprimer ce cours ?</p>
+
+<form method="post">
+    {% csrf_token %}
+
+    <button type="submit" class="btn btn-danger">
+        Oui, supprimer
+    </button>
+
+    <a href="/cours/" class="btn btn-secondary">
+        Annuler
+    </a>
+</form>
+
+{% endblock %}

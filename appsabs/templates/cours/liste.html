@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Liste des cours</h1>
+
+<a href="#" class="btn btn-success">
+    Ajouter un cours
+</a>
+
+<table class="table table-striped mt-3">
+    <tr>
+        <th>Nom du cours</th>
+        <th>Code</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <a href="#" class="btn btn-warning btn-sm">
+                Modifier
+            </a>
+
+            <a href="#" class="btn btn-danger btn-sm">
+                Supprimer
+            </a>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}
