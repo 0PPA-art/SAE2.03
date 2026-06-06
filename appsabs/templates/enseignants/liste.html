@@ -26,6 +26,13 @@
             </a>
         </td>
     </tr>
+    {% for enseignant in enseignants %}
+<tr>
+    <td>{{ enseignant.nom }}</td>
+    <td>{{ enseignant.prenom }}</td>
+    <td>{{ enseignant.email }}</td>
+</tr>
+{% endfor %}
 </table>
 
 {% endblock %}

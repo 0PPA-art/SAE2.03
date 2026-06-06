@@ -25,6 +25,17 @@
             </a>
         </td>
     </tr>
+    {% for c in cours %}
+<tr>
+    <td>{{ c.titre }}</td>
+    <td>{{ c.date }}</td>
+
+    <td>
+        Modifier
+        Supprimer
+    </td>
+</tr>
+{% endfor %}
 </table>
 
 {% endblock %}

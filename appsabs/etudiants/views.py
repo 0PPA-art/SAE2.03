@@ -1,8 +1,15 @@
 from django.shortcuts import render, redirect
 from absences.forms import EtudiantForm
+from absences.models import Etudiant
 
 def liste_etudiants(request):
-    return render(request, 'etudiants/liste.html')
+    etudiants = Etudiant.objects.all()
+
+    return render(
+        request,
+        'etudiants/liste.html',
+        {'etudiants': etudiants}
+    )
 
 def ajout_etudiant(request):
 

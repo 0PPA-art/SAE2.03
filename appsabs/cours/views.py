@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from absences.forms import CoursForm
+from absences.models import Cours
 
 def liste_cours(request):
     return render(request, 'cours/liste.html')
@@ -20,4 +21,12 @@ def ajout_cours(request):
         request,
         'cours/ajout.html',
         {'form': form}
+    )
+def liste_cours(request):
+    cours = Cours.objects.all()
+
+    return render(
+        request,
+        'cours/liste.html',
+        {'cours': cours}
     )
