@@ -80,7 +80,12 @@ def import_absences(request):
 
         fichier = request.FILES["fichier"]
 
-        lignes = fichier.read().decode("utf-8").splitlines()
+        contenu = fichier.read()
+
+        try:
+            lignes = contenu.decode("utf-8-sig").splitlines()
+        except UnicodeDecodeError:
+            lignes = contenu.decode("latin-1").splitlines()
 
         lecteur = csv.reader(lignes)
 

@@ -8,24 +8,28 @@
     Bienvenue sur l'application de gestion des absences.
 </p>
 
-<div class="mt-4">
-    <a href="/etudiants/" class="btn btn-primary">
+<div class="mt-4 d-flex gap-2">
+
+    <a href="/etudiants/" class="btn btn-primary" style="width:140px;">
         Étudiants
     </a>
 
-    <a href="/enseignants/" class="btn btn-success">
+    <a href="/enseignants/" class="btn btn-success" style="width:140px;">
         Enseignants
     </a>
 
-    <a href="/cours/" class="btn btn-warning">
+    <a href="/cours/" class="btn btn-warning" style="width:140px;">
         Cours
     </a>
-    <a href="{% url 'groupe-liste' %}" class="btn btn-primary btn-lg px-1 py-1">
-                    <strong>Groupes</strong>
+
+    <a href="{% url 'groupe-liste' %}" class="btn btn-primary" style="width:140px;">
+        Groupes
     </a>
-    <a href="/absences/" class="btn btn-danger btn-lg px-1 py-1">
-        <strong>Absences</strong>
+
+    <a href="/absences/" class="btn btn-danger" style="width:140px;">
+        Absences
     </a>
+
 </div>
 
 {% endblock %}
