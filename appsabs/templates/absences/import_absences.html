@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Importer des absences</h1>
+
+<p>Format CSV attendu :</p>
+
+<pre>
+email_etudiant,id_cours
+kerem@iut.fr,1
+aymeri@iut.fr,1
+</pre>
+
+<form
+    method="post"
+    enctype="multipart/form-data"
+>
+
+    {% csrf_token %}
+
+    <input
+        type="file"
+        name="fichier"
+    >
+
+    <input
+        type="submit"
+        value="Importer"
+    >
+
+</form>
+
+{% endblock %}

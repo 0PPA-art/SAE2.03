@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Liste des absences</h1>
+
+<a href="/absences/absence/ajout/" class="btn btn-primary">
+    Ajouter une absence
+</a>
+
+<a href="/absences/import/" class="btn btn-success">
+    Import CSV
+</a>
+
+<hr>
+
+{% for absence in absences %}
+
+<p>
+
+    {{ absence.etudiant }}
+
+    -
+
+    {{ absence.cours }}
+
+    -
+
+    {% if absence.justifie %}
+        Justifiée
+    {% else %}
+        Non justifiée
+    {% endif %}
+
+    <br><br>
+
+    <a href="/absences/absence/affiche/{{ absence.id }}/">
+        Voir
+    </a>
+
+    |
+
+    <a href="/absences/absence/update/{{ absence.id }}/">
+        Modifier
+    </a>
+
+    |
+
+    <a href="/absences/absence/delete/{{ absence.id }}/">
+        Supprimer
+    </a>
+
+</p>
+
+<hr>
+
+{% endfor %}
+
+{% endblock %}

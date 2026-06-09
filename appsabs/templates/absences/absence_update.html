@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Modifier absence</h1>
+
+<form
+    method="post"
+    action="/absences/absence/traitementupdate/{{ id }}/"
+>
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input
+        type="submit"
+        value="Modifier"
+    >
+
+</form>
+
+{% endblock %}

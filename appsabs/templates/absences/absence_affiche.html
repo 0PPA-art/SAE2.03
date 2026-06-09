@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Détail absence</h1>
+
+<p>Étudiant : {{ absence.etudiant }}</p>
+
+<p>Cours : {{ absence.cours }}</p>
+
+<p>Justifiée : {{ absence.justifie }}</p>
+
+<p>Justification : {{ absence.justification }}</p>
+
+{% endblock %}
