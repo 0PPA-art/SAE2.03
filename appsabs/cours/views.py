@@ -1,49 +1,45 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from absences.forms import CoursForm
-from absences.models import Cours
+{% extends 'base.html' %}
 
+{% block content %}
 
-def liste_cours(request):
-    cours = Cours.objects.all()
-    return render(request, 'cours/liste.html', {'cours': cours})
+<h1>Liste des cours</h1>
 
+<a href="/cours/ajout/" class="btn btn-success mb-3">
+    Ajouter un cours
+</a>
 
-def ajout_cours(request):
-    if request.method == 'POST':
-        form = CoursForm(request.POST)
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Date</th>
+            <th>Enseignant</th>
+            <th>Durée</th>
+            <th>Groupe</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
 
-        if form.is_valid():
-            form.save()
-            return redirect('/cours/')
-    else:
-        form = CoursForm()
+    <tbody>
+        {% for c in cours %}
+        <tr>
+            <td>{{ c.titre }}</td>
+            <td>{{ c.date }}</td>
+            <td>{{ c.enseignant }}</td>
+            <td>{{ c.duree }}</td>
+            <td>{{ c.groupe }}</td>
+            <td>
+                <a href="/cours/modifier/{{ c.id }}/" class="btn btn-warning btn-sm">
+                    Modifier
+                </a>
 
-    return render(request, 'cours/ajout.html', {'form': form})
+                <a href="/cours/supprimer/{{ c.id }}/" class="btn btn-danger btn-sm">
+                    Supprimer
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
-
-def modifier_cours(request, id):
-    cours = get_object_or_404(Cours, id=id)
-
-    if request.method == 'POST':
-        form = CoursForm(request.POST, instance=cours)
-
-        if form.is_valid():
-            form.save()
-            return redirect('/cours/')
-    else:
-        form = CoursForm(instance=cours)
-
-    return render(request, 'cours/modifier.html', {'form': form})
-
-def supprimer_cours(request, id):
-    cours = get_object_or_404(Cours, id=id)
-
-    if request.method == 'POST':
-        cours.delete()
-        return redirect('/cours/')
-
-    return render(
-        request,
-        'cours/supprimer.html',
-        {'cours': cours}
-    )
+{% endblock %}

@@ -4,40 +4,42 @@
 
 <h1>Liste des cours</h1>
 
-<a href="#" class="btn btn-success">
+<a href="/cours/ajout/" class="btn btn-success mb-3">
     Ajouter un cours
 </a>
 
 <table class="table table-striped mt-3">
-    <tr>
-        <th>Nom du cours</th>
-        <th>Code</th>
-        <th>Actions</th>
-    </tr>
-    <tr>
-        <td colspan="3">
-          <td>
-    <a href="/cours/modifier/{{ c.id }}/" class="btn btn-warning btn-sm">
-        Modifier
-    </a>
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Date</th>
+            <th>Enseignant</th>
+            <th>Durée</th>
+            <th>Groupe</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
 
-    <a href="/cours/supprimer/{{ c.id }}/" class="btn btn-danger btn-sm">
-        Supprimer
-    </a>
-</td>
-        </td>
-    </tr>
-    {% for c in cours %}
-<tr>
-    <td>{{ c.titre }}</td>
-    <td>{{ c.date }}</td>
+    <tbody>
+        {% for c in cours %}
+        <tr>
+            <td>{{ c.titre }}</td>
+            <td>{{ c.date }}</td>
+            <td>{{ c.enseignant }}</td>
+            <td>{{ c.duree }}</td>
+            <td>{{ c.groupe }}</td>
+            <td>
+                <a href="/cours/modifier/{{ c.id }}/" class="btn btn-warning btn-sm">
+                    Modifier
+                </a>
 
-    <td>
-        Modifier
-        Supprimer
-    </td>
-</tr>
-{% endfor %}
+                <a href="/cours/supprimer/{{ c.id }}/" class="btn btn-danger btn-sm">
+                    Supprimer
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
 
 {% endblock %}
