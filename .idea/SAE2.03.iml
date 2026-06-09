@@ -6,7 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/appsabs/.venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.9 (SAE2.03) (2)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.13 (SAE2.03)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
