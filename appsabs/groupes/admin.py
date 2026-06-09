@@ -1,3 +1,8 @@
+# groupes/admin.py
 from django.contrib import admin
+from .models import Groupe
 
-# Register your models here.
+@admin.register(Groupe)
+class GroupeAdmin(admin.ModelAdmin):
+    list_display = ['nom']
+    list_filter = []

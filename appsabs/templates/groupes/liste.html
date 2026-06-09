@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Liste des Groupes{% endblock %}
+
+{% block content %}
+<h2>Liste des Groupes</h2>
+<a href="{% url 'groupe-ajouter' %}" class="btn btn-success mb-3">+ Nouveau Groupe</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Année</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for groupe in groupes %}
+        <tr>
+            <td>{{ groupe.nom }}</td>
+            <td>{{ groupe.annee }}</td>
+            <td>
+                <a href="{% url 'groupe-modifier' groupe.pk %}" class="btn btn-warning btn-sm">Modifier</a>
+                <a href="{% url 'groupe-supprimer' groupe.pk %}" class="btn btn-danger btn-sm">Supprimer</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
