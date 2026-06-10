@@ -3,13 +3,12 @@ from .models import Groupe
 from .forms import GroupeForm
 
 
-# ====================== LISTE ======================
 def liste_groupes(request):
     groupes = Groupe.objects.all().order_by('nom')
     return render(request, 'groupes/liste.html', {'groupes': groupes})
 
 
-# ====================== AJOUT ======================
+
 def ajout_groupe(request):
     if request.method == 'POST':
         form = GroupeForm(request.POST)
@@ -22,7 +21,7 @@ def ajout_groupe(request):
     return render(request, 'groupes/form.html', {'form': form})
 
 
-# ====================== MODIFICATION ======================
+
 def modifier_groupe(request, pk):
     groupe = get_object_or_404(Groupe, pk=pk)
 
@@ -37,7 +36,7 @@ def modifier_groupe(request, pk):
     return render(request, 'groupes/form.html', {'form': form})
 
 
-# ====================== SUPPRESSION ======================
+
 def supprimer_groupe(request, pk):
     groupe = get_object_or_404(Groupe, pk=pk)
 
