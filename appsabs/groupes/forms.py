@@ -1,8 +1,7 @@
-# groupes/forms.py
 from django import forms
-from .models import Groupe  # ← on importe le vrai modèle
+from .models import Groupe  
 
-class GroupeForm(forms.ModelForm):  # ← ModelForm, pas models.Model
+class GroupeForm(forms.ModelForm):  
     class Meta:
         model = Groupe
-        fields = ['nom']  # adapte selon tes champs
+        fields = ['nom'] 
