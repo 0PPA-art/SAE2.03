@@ -21,5 +21,4 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('groupes/', include('groupes.urls')),
-    # Tu ajouteras plus tard : cours/, etudiants/, absences/...
 ]
