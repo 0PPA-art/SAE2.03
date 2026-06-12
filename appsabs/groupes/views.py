@@ -7,15 +7,15 @@ from . import models
 
 
 def ajout(request):
-    if request.method == "POST": # arrive en cas de retour sur cette page après unesaisie invalide on récupère donc les données. Normalement nous ne devrions pas passer par ce chemin la pour le traitement des données
+    if request.method == "POST": 
         form = GroupeForm(request)
-        if form.is_valid(): # validation du formulaire.
-            groupes = form.save() # sauvegarde dans la base
-            return render(request,"appsabs/affiche.html",{"appsabs" : Livre}) #envoie vers une page d'affichage du bibliothequeapp créé
+        if form.is_valid(): 
+            groupes = form.save() 
+            return render(request,"appsabs/affiche.html",{"appsabs" : Livre})
         else:
             return render(request,"appsabs/ajout_categorie.html",{"form": form})
     else :
-        form = GroupeForm() # création d'un formulaire vide
+        form = GroupeForm() 
         return render(request,"appsabs/ajout_categorie.html",{"form" : form})
 
 class GroupeListView(ListView):
@@ -38,7 +38,7 @@ class GroupeUpdateView(UpdateView):
         Groupe.save()
         template_name = 'groupes/form.html'
         success_url = reverse_lazy('groupe-liste')
-        return HttpResponseRedirect("/bibliothequeapp/")  # plutot que d'avoir un gabarit
+        return HttpResponseRedirect("/bibliothequeapp/")  
 
 class GroupeDeleteView(DeleteView):
 
