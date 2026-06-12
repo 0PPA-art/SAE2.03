@@ -38,13 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Tes applications
-    'groupes',  # ← Ajoute cette ligne
-    # 'cours',           # tu ajouteras plus tard
-    # 'etudiants',
-    # 'enseignants',
-    # 'absences',
-    # 'core',
+
+    'groupes', 
+    'cours',
+
 ]
 
 MIDDLEWARE = [
